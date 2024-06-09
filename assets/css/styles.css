@@ -8,12 +8,15 @@ body.light {
     --main-bg: hsl(222, 26%, 31%);
     --keypad-bg: hsl(223, 31%, 20%);
     --screen-bg: hsl(224, 36%, 15%);
-    --key-bg: hsl(225, 21%, 49%);
+    --key: hsl(225, 21%, 49%);
     --key-shadow: hsl(224, 28%, 35%);
+    --key-hover: #a2b3e1;
     --equals-key: hsl(6, 63%, 50%);
     --equals-key-shadow: hsl(6, 70%, 34%);
-    --equals-key-active: hsl(30, 25%, 89%);
-    --equals-key-shadow-active: hsl(28, 16%, 65%);
+    --equals-key-hover: #f96c5b;
+    --numbers-key: hsl(30, 25%, 89%);
+    --numbers-key-shadow: hsl(28, 16%, 65%);
+    --numbers-key-hover: #fff;
     --secondary-txt: hsl(221, 14%, 31%);
     --primary-text: hsl(0, 0%, 100%);
 }
@@ -114,7 +117,7 @@ h1 {
 }
 
 .toggle-btns .slider:hover {
-    background-color: var(--equals-key-active);
+    background-color: var(--equals-key-hover);
 }
 
 .toggle-btns input#theme1:checked ~ .slider {
@@ -134,8 +137,8 @@ h1 {
 #calc-screen {
     width: 100%;
     background: var(--screen-bg);
-    font-size: calc(50rem / 16);
-    border-radius: 8px;
+    font-size: calc(54rem / 16);
+    border-radius: 10px;
     padding: 38px 32px;
     text-align: right;
     margin: 34px 0 24px 0;
@@ -145,7 +148,55 @@ h1 {
 
 #calc-keypad {
     width: 100%;
-    background: var(--key-bg);
+    background: var(--keypad-bg);
     padding: 32px;
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 24px;
+    column-gap: 25px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.numbers, .del, .reset, .equals {
+    border-radius: 8px;
+    padding: 16px 0 12px 0;
+}
+
+.numbers {
+    background: var(--numbers-key);
+    color: var(--secondary-txt);
+    border-bottom: 5px solid var(--numbers-key-shadow);
+}
+
+.numbers:hover {
+    background: var(--numbers-key-hover);
+}
+
+.del {
+    border-radius: 8px;
+    background: var(--key);
+    border-bottom: 5px solid var(--key-shadow);
+}
+
+.del:hover, .reset:hover {
+    background: var(--key-hover);
+}
+
+.reset {
+    background: var(--key);
+    grid-column: 1 / span 2;
+    grid-row: 5;
+    border-bottom: 5px solid var(--key-shadow);
+}
+
+.equals {
+    background: var(--equals-key);
+    grid-column: 3 / span 2;
+    grid-row: 5;
+    border-bottom: 5px solid var(--equals-key-shadow);
+}
+
+.equals:hover {
+    background: var(--equals-key-hover);
 }
