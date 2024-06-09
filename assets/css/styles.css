@@ -46,7 +46,8 @@ body {
 }
 
 h1 {
-    font-size: calc(26rem / 16);
+    font-size: calc(30rem / 16);
+    padding-left: 8px;
 }
 
 #calc-container {
@@ -63,10 +64,24 @@ h1 {
     width: 100%;
 }
 
+/* theme toggle styles */
+
 .theme-toggle {
     display: grid;
+    align-items: center;
     grid-template-columns: auto auto;
     font-size: calc(14rem / 16);
+}
+
+.theme-toggle h2 {
+    padding-right: 28px;
+    font-size: calc(12rem / 16);
+}
+
+.theme-nums {
+    display: flex;
+    justify-content: space-around;
+    padding: 6px;
 }
 
 .toggle-btns {
@@ -77,21 +92,21 @@ h1 {
     border: none;
     background: var(--keypad-bg);
     border-radius: 100px;
-    padding: 4px 8px;
-    width: calc(70rem / 16);
+    padding: 4px 6px;
+    width: auto;
 }
 
 .toggle-btns input[type=radio] {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     border: none;
-    opacity: 1;
+    opacity: 0;
 }
 
 .toggle-btns .slider {
     position: absolute;
-    height: calc(16rem / 16);
-    width: calc(16rem / 16);
+    height: calc(18rem / 16);
+    width: calc(18rem / 16);
     border-radius: 50%;
     background-color: var(--equals-key);
     -webkit-transition: .4s;
@@ -107,12 +122,14 @@ h1 {
 }
 
 .toggle-btns input#theme2:checked ~ .slider {
-    margin-left: 20px;
+    margin-left: 18px;
 }
 
 .toggle-btns input#theme3:checked ~ .slider {
-    margin-left: 38px;
+    margin-left: 36px;
 }
+
+/* calculator screen styles*/
 
 #calc-screen {
     width: 100%;
@@ -124,7 +141,9 @@ h1 {
     margin: 34px 0 24px 0;
 }
 
-#calc-btns {
+/* calculator keypad buttons*/
+
+#calc-keypad {
     width: 100%;
     background: var(--key-bg);
     padding: 32px;
