@@ -2,25 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
+  <script defer src="./assets/js/scripts.js"></script>
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
-
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+<body class="light">
+  <main id="calc-container">
+    <header id="calc-header">
+      <h1>calc</h1>
+      <div class="theme-toggle">
+        <div></div>
+        <div><p>1 2 3</p></div>
+        <div>THEME</div>
+        <div>
+          <form>
+            <fieldset class="toggle-btns">
+                <input type="radio" name="theme" id="theme1" value="theme1" aria-label="Switch to theme 1" checked />
+                <input type="radio" name="theme" id="theme2" value="theme2" aria-label="Switch to theme 2" />
+                <input type="radio" name="theme" id="theme3" value="theme3" aria-label="Switch to theme 3" />
+                <span class="slider"></span>
+            </fieldset>
+        </form>
+        </div>
+      </div>
+    </header>
+    <div id="calc-screen">399,981</div>
+    <div id="calc-btns">
+      xxx
+    </div>
+  </main>
 </body>
 </html>

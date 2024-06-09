@@ -1,0 +1,132 @@
+:root {
+
+}
+
+/* theme styles */
+
+body.light {
+    --main-bg: hsl(222, 26%, 31%);
+    --keypad-bg: hsl(223, 31%, 20%);
+    --screen-bg: hsl(224, 36%, 15%);
+    --key-bg: hsl(225, 21%, 49%);
+    --key-shadow: hsl(224, 28%, 35%);
+    --equals-key: hsl(6, 63%, 50%);
+    --equals-key-shadow: hsl(6, 70%, 34%);
+    --equals-key-active: hsl(30, 25%, 89%);
+    --equals-key-shadow-active: hsl(28, 16%, 65%);
+    --secondary-txt: hsl(221, 14%, 31%);
+    --primary-text: hsl(0, 0%, 100%);
+}
+
+/* reset styles */
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: calc(32rem / 16);
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background: var(--main-bg);
+    color: var(--primary-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: calc(26rem / 16);
+}
+
+#calc-container {
+    width: calc(588rem / 16);
+    max-width: calc(588rem / 16);
+    padding: 24px;
+}
+
+#calc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.theme-toggle {
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: calc(14rem / 16);
+}
+
+.toggle-btns {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    background: var(--keypad-bg);
+    border-radius: 100px;
+    padding: 4px 8px;
+    width: calc(70rem / 16);
+}
+
+.toggle-btns input[type=radio] {
+    width: 16px;
+    height: 16px;
+    border: none;
+    opacity: 1;
+}
+
+.toggle-btns .slider {
+    position: absolute;
+    height: calc(16rem / 16);
+    width: calc(16rem / 16);
+    border-radius: 50%;
+    background-color: var(--equals-key);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.toggle-btns .slider:hover {
+    background-color: var(--equals-key-active);
+}
+
+.toggle-btns input#theme1:checked ~ .slider {
+    margin-left: 0;
+}
+
+.toggle-btns input#theme2:checked ~ .slider {
+    margin-left: 20px;
+}
+
+.toggle-btns input#theme3:checked ~ .slider {
+    margin-left: 38px;
+}
+
+#calc-screen {
+    width: 100%;
+    background: var(--screen-bg);
+    font-size: calc(50rem / 16);
+    border-radius: 8px;
+    padding: 38px 32px;
+    text-align: right;
+    margin: 34px 0 24px 0;
+}
+
+#calc-btns {
+    width: 100%;
+    background: var(--key-bg);
+    padding: 32px;
+    display: grid;
+}
