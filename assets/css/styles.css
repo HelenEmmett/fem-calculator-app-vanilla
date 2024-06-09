@@ -4,7 +4,7 @@
 
 /* theme styles */
 
-body.light {
+body.theme1 {
     --main-bg: hsl(222, 26%, 31%);
     --keypad-bg: hsl(223, 31%, 20%);
     --screen-bg: hsl(224, 36%, 15%);
@@ -17,8 +17,48 @@ body.light {
     --numbers-key: hsl(30, 25%, 89%);
     --numbers-key-shadow: hsl(28, 16%, 65%);
     --numbers-key-hover: #fff;
-    --secondary-txt: hsl(221, 14%, 31%);
     --primary-text: hsl(0, 0%, 100%);
+    --numbers-text: hsl(221, 14%, 31%);
+    --delete-text: hsl(0, 0%, 100%);
+    --equals-text: hsl(0, 0%, 100%);
+}
+
+body.theme2 {
+    --main-bg: hsl(0, 0%, 90%);
+    --keypad-bg: hsl(0, 5%, 81%);
+    --screen-bg: hsl(0, 0%, 93%);
+    --key: hsl(185, 42%, 37%);
+    --key-shadow: hsl(185, 58%, 25%);
+    --key-hover: #62b5bd;
+    --equals-key: hsl(25, 98%, 40%);
+    --equals-key-shadow: hsl(25, 99%, 27%);
+    --equals-key-hover: #ff8b38;
+    --numbers-key: hsl(45, 7%, 89%);
+    --numbers-key-shadow: hsl(35, 11%, 61%);
+    --numbers-key-hover: #fff;
+    --primary-text: hsl(60, 10%, 19%);
+    --numbers-text: hsl(60, 10%, 19%);
+    --delete-text: hsl(0, 0%, 100%);
+    --equals-text: hsl(0, 0%, 100%);
+}
+
+body.theme3 {
+    --main-bg: hsl(268, 75%, 9%);
+    --keypad-bg: hsl(268, 71%, 12%);
+    --screen-bg: hsl(268, 71%, 12%);
+    --key: hsl(281, 89%, 26%);
+    --key-shadow: hsl(285, 91%, 52%);
+    --key-hover: #8631b0;
+    --equals-key: hsl(176, 100%, 44%);
+    --equals-key-shadow: hsl(177, 92%, 70%);
+    --equals-key-hover: #94fff9;
+    --numbers-key: hsl(268, 47%, 21%);
+    --numbers-key-shadow: hsl(290, 70%, 36%);
+    --numbers-key-hover: #6b34ac;
+    --primary-text: hsl(52, 100%, 62%);
+    --numbers-text: hsl(52, 100%, 62%);
+    --delete-text: hsl(0, 0%, 100%);
+    --equals-text: hsl(198, 20%, 13%);
 }
 
 /* reset styles */
@@ -165,7 +205,7 @@ h1 {
 
 .numbers {
     background: var(--numbers-key);
-    color: var(--secondary-txt);
+    color: var(--numbers-text);
     border-bottom: 5px solid var(--numbers-key-shadow);
 }
 
@@ -176,6 +216,7 @@ h1 {
 .del {
     border-radius: 8px;
     background: var(--key);
+    color: var(--delete-text);
     border-bottom: 5px solid var(--key-shadow);
 }
 
@@ -185,6 +226,7 @@ h1 {
 
 .reset {
     background: var(--key);
+    color: var(--delete-text);
     grid-column: 1 / span 2;
     grid-row: 5;
     border-bottom: 5px solid var(--key-shadow);
@@ -192,6 +234,7 @@ h1 {
 
 .equals {
     background: var(--equals-key);
+    color: var(--equals-text);
     grid-column: 3 / span 2;
     grid-row: 5;
     border-bottom: 5px solid var(--equals-key-shadow);
