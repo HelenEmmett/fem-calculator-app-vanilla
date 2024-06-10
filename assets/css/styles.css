@@ -94,7 +94,7 @@ body {
     font-size: calc(32rem / 16);
     padding: 0;
     margin: 0;
-    height: 100vh;
+    height: 100%;
     background: var(--main-bg);
     color: var(--primary-text);
     display: flex;
@@ -238,6 +238,7 @@ h1 {
     background: var(--key);
     color: var(--delete-text);
     border-bottom: 5px solid var(--key-shadow);
+    font-size: .75em;
 }
 
 .del:hover, .reset:hover {
@@ -250,6 +251,7 @@ h1 {
     grid-column: 1 / span 2;
     grid-row: 5;
     border-bottom: 5px solid var(--key-shadow);
+    font-size: .75em;
 }
 
 .equals {
@@ -268,11 +270,29 @@ h1 {
 
 @media only screen and (max-width: 636px) {
     #calc-container {
-        width: auto;
+        width: 100%;
+    }
+    #calc-screen {
+        font-size: calc(40rem / 16);
+        padding: 24px 24px;
+        margin: 34px 0 24px 0;
+    }    
+    #calc-keypad {
+        padding: 24px;
+        row-gap: 13px;
+        column-gap: 13px;
+    }
+    .numbers, .operators, .del, .reset, .equals {
+        font-size: calc(28rem / 16);
+        padding: 20px 0 16px 0;
+        border: none;
+    }
+    .del, .reset {
+        font-size: calc(20rem / 16);
     }
 }
 
-/* check for preferred colour scheme */
+/* check for preferred colour scheme, dark is default */
 
 @media (prefers-color-scheme: light) {
     body {
