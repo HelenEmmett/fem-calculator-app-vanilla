@@ -212,7 +212,7 @@ h1 {
     border-radius: 10px;
 }
 
-.numbers, .operators, .del, .reset, .equals {
+.keys, .del, .reset, .equals {
     font-family: "League Spartan", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
@@ -223,13 +223,13 @@ h1 {
     border: none;
 }
 
-.numbers, .operators {
+.keys {
     background: var(--numbers-key);
     color: var(--numbers-text);
     border-bottom: 5px solid var(--numbers-key-shadow);
 }
 
-.numbers:hover, .operators:hover {
+.keys:hover {
     background: var(--numbers-key-hover);
 }
 
@@ -282,7 +282,7 @@ h1 {
         row-gap: 13px;
         column-gap: 13px;
     }
-    .numbers, .operators, .del, .reset, .equals {
+    .keys, .del, .reset, .equals {
         font-size: calc(28rem / 16);
         padding: 20px 0 16px 0;
         border: none;
