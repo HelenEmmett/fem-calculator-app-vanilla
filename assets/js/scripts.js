@@ -1,26 +1,41 @@
 const theme1 = document.getElementById("theme1");
 const theme2 = document.getElementById("theme2");
 const theme3 = document.getElementById("theme3");
+
 const keys = document.querySelectorAll(".keys");
 const deleteKey = document.getElementById("del");
 const resetKey = document.getElementById("reset");
 const equalsKey = document.getElementById("equals");
 let screen = document.getElementById("calc-screen");
+const operators = ['+', 'x', '/'];
 
-// add event listeners to keys
+// add event listeners to calculator keys
 keys.forEach(key => key.addEventListener('click', () => {
     addValues(key.value);
 }));
 
-function addValues(key) {
-    if (screen.innerText === "0") {
+function addValues(key) {   
+    // check if it's the first entry
+    if (screen.innerText === "0" && operators.includes(key)) {
+        //ignore
+    }
+    else if (screen.innerText === "0") {
         screen.innerText = key;
-    } else {
+    } 
+    // check that operators are not added consecutively
+    else if (operators.includes(key) && operators.includes(screen.innerText[screen.innerText.length - 1])) {
+        screen.innerText = screen.innerText.slice(0, -1) + key;
+    } 
+    // check that "-" is not added consecutively
+    else if (key === "-" && screen.innerText[screen.innerText.length - 1] === "-") {
+        //ignore
+    } 
+    else {
         screen.innerText += key;
     }
 }
 
-// delete key functionality
+// calculator delete key functionality
 deleteKey.addEventListener("click", () => {
     if (screen.innerText.length === 1) {
         screen.innerText = "0";
@@ -30,14 +45,18 @@ deleteKey.addEventListener("click", () => {
     } 
 })
 
-// reset key functionality
+// calculator reset key functionality
 resetKey.addEventListener("click", () => {
     screen.innerText = "0";
 })
   
-// evaluate equation
+// calculator evaluate equation
 equalsKey.addEventListener("click", () => {
-    screen.innerText = eval(screen.innerText);
+    let equation = screen.innerText;
+    // replace x with *
+    equation = equation.replace(/x/g, '*')
+    
+    screen.innerText = equation;
 })
 
 // theme switcher functionality
@@ -55,7 +74,7 @@ function colorModeFromLocalStorage() {
     return localStorage.getItem("colorMode");
 };
 
-// get prefered colour scheme from the user
+// get prefered colour scheme from the user, this works with the media query
 function colorModeFromPreferences() {
     return window.matchMedia('(prefers-color-scheme: light)').matches
         ? "theme2"
