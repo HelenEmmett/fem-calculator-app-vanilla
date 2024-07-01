@@ -196,6 +196,7 @@ h1 {
     padding: 38px 32px;
     text-align: right;
     margin: 34px 0 24px 0;
+    overflow-wrap: break-word;
 }
 
 /* calculator keypad buttons*/
