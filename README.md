@@ -1,6 +1,6 @@
 # Frontend Mentor - Calculator app solution
 
-This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29){:target="_blank"}. 
+This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29) . 
 
 ## Overview
 
@@ -19,7 +19,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [View the live solution](https://helenemmett.github.io/fem-calculator-app-vanilla/){:target="_blank"}
+- Solution URL: [View the live solution](https://helenemmett.github.io/fem-calculator-app-vanilla/) 
 
 ## My process
 
@@ -49,11 +49,11 @@ In the future I would like to rebuild this with React. I would also like to writ
 
 ### Useful resources and acknowledgments
 
-- [The Odin Project](https://www.theodinproject.com/lessons/foundations-calculator){:target="_blank"} - This helped me think through some of the potential issues when building a calculator.
-- [typeofnan](https://typeofnan.dev/how-to-add-thousandths-place-comma-every-three-digits-in-javascript/){:target="_blank"} - This article helped me to consider using regular expressions. Although this solution didn't work for this project, it gave me the seed of thought! I also used W3Schools and MDN Web Docs for further understanding.
-- [Javascript Calculator with Keyboard Input](https://codepen.io/thecountgs/pen/JReGNR){:target="_blank"} - This was a good reference project. It uses var so I would assume it is quite old, but it gave me a start of where to look to implement keyboard support for the project. This was also where I got the idea of having a boolean variable to manage the state of using a decimal point.
+- [The Odin Project](https://www.theodinproject.com/lessons/foundations-calculator)  - This helped me think through some of the potential issues when building a calculator.
+- [typeofnan](https://typeofnan.dev/how-to-add-thousandths-place-comma-every-three-digits-in-javascript/)  - This article helped me to consider using regular expressions. Although this solution didn't work for this project, it gave me the seed of thought! I also used W3Schools and MDN Web Docs for further understanding.
+- [Javascript Calculator with Keyboard Input](https://codepen.io/thecountgs/pen/JReGNR)  - This was a good reference project. It uses var so I would assume it is quite old, but it gave me a start of where to look to implement keyboard support for the project. This was also where I got the idea of having a boolean variable to manage the state of using a decimal point.
 
 ## Author
 
-- Website - [Helen Emmett](https://helenemmett.co.nz/){:target="_blank"}
-- Frontend Mentor - [@HelenEmmett](https://www.frontendmentor.io/profile/HelenEmmett){:target="_blank"}
+- Website - [Helen Emmett](https://helenemmett.co.nz/) 
+- Frontend Mentor - [@HelenEmmett](https://www.frontendmentor.io/profile/HelenEmmett) 

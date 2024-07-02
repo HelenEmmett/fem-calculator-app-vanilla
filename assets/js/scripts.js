@@ -91,9 +91,10 @@ resetKey.addEventListener("click", () => {
 function evaluateExpression(expression) {
     // remove all commas
     expression = expression.toString().replace( /\,/g, "");
-    
+    console.log(expression);
     // split the expression into numbers and operators
-    const tokens = expression.match(/(\d+\.\d+|\d+|(?<=\D|^)-\d+|\+|\-|\x|\/)/g);
+    const tokens = expression.match(/(-?\d+\.\d+|\d+|(?<=\D|^)-\d+|\+|\-|\x|\/)/g);
+    console.log(tokens);
     if (!tokens) return "ERROR";
 
     // helper function to perform a single operation
