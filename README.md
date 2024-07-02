@@ -1,6 +1,6 @@
 # Frontend Mentor - Calculator app solution
 
-This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). 
 
 ## Overview
 
@@ -11,15 +11,15 @@ Users should be able to:
 - See the size of the elements adjust based on their device's screen size
 - Perform mathmatical operations like addition, subtraction, multiplication, and division
 - Adjust the color theme based on their preference
-- **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
+- Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 ### Links
 
-- Solution URL TBC: [Add solution URL here](#)
+- Solution URL: [Add solution URL here](#)
 
 ## My process
 
@@ -27,16 +27,24 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - CSS custom properties
-- CSS Grid
+- CSS grid
 - JavaScript
+- JavaScript regular expressions
+- Keyboard support
+- Implemented without using eval()
+
 
 ### What I learned
 
-TBC
+This was a great project to practice implementing a 3-colour theme switcher. I used `prefers-color-scheme` and local storage to ensure the selected theme would remain upon a page refresh. 
+
+I learned more about using complex regex to add in a thousands separator, and to split the expression string into an array of numbers and operators. One difficulty I had was how to recognise negative numbers. I solved this using a lookbehind assertion to check whether the character preceeding a negative symbol was a number or operator.
+
+A key focus was to implement this without using the problematic eval() function, and to manually evaluate the expression using BEDMAS.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+In the future I would like to rebuild this with React. I would also like to write test cases, as all my testing was done manually.
 
 
 ### Useful resources
