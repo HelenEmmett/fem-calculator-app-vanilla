@@ -12,6 +12,13 @@ let decimal = false;
 const operators = ["+", "x", "/"];
 const acceptedKeys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "x", "/", "-", "."];
 
+// add thousands separator to string
+function addThousandsSeparator(expression) {
+    expression = expression.toString().replace( /\,/g, "");
+    expression = expression.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    return expression;
+}
+
 // add each key value to the screen
 function addValues(key) {
     const lastChar = screen.innerText[screen.innerText.length - 1];
@@ -41,6 +48,7 @@ function addValues(key) {
     } else if (!operators.includes(key) && key !== "-") {
         screen.innerText += key;
     }
+    screen.innerText = addThousandsSeparator(screen.innerText);
 }
 
 // add event listeners to calculator keys
@@ -60,6 +68,7 @@ function deleteValue() {
         if (lastChar === ".") {
             decimal = false;
         }
+        screen.innerText = addThousandsSeparator(screen.innerText);
     }
 }
 
@@ -80,6 +89,8 @@ resetKey.addEventListener("click", () => {
 
 // calculator: evaluate the equation function
 function evaluateExpression(expression) {
+    // remove all commas
+    expression = expression.toString().replace( /\,/g, "");
     // split the expression into numbers and operators
     const tokens = expression.match(/(\d+\.\d+|\d+|(?<=\D|^)-\d+|\+|\-|\x|\/)/g);
     if (!tokens) return "ERROR";
@@ -120,7 +131,7 @@ function evaluateExpression(expression) {
     if (isNaN(parseFloat(result))) return "ERROR"; // check the result is a number
     result = parseFloat(parseFloat(result).toFixed(6)); // round to maximum 6 decimal places
     decimal = expression.includes(".") ? true : false; // reset decimal boolean
-
+    result = addThousandsSeparator(result);
     return result;
 }
 
