@@ -6,7 +6,8 @@ const keys = document.querySelectorAll(".keys");
 const deleteKey = document.getElementById("del");
 const resetKey = document.getElementById("reset");
 const equalsKey = document.getElementById("equals");
-let screen = document.getElementById("calc-screen");
+let screenWrap = document.getElementById("calc-screen");
+let screen = document.getElementById("calc-screen-txt");
 let decimal = false;
 const operators = ["+", "x", "/"];
 const acceptedKeys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "x", "/", "-", "."];
@@ -91,7 +92,7 @@ function evaluateExpression(expression) {
             case '+': return a + b;
             case '-': return a - b;
             case 'x': return a * b;
-            case '/': return b !== 0 ? a / b : "ZERO DIVISION ERROR";
+            case '/': return b !== 0 ? a / b : "ERROR: /0";
             default: return "ERROR";
         }
     }
