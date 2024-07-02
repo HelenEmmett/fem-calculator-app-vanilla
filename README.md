@@ -38,7 +38,7 @@ Users should be able to:
 
 This was a great project to practice implementing a 3-colour theme switcher. I used `prefers-color-scheme` and local storage to ensure the selected theme would remain upon a page refresh. 
 
-I learned more about using complex regex to add in a thousands separator, and to split the expression string into an array of numbers and operators. One difficulty I had was how to recognise negative numbers. I solved this using a lookbehind assertion to check whether the character preceeding a negative symbol was a number or operator.
+I learned more about using complex regex to add in a thousands separator, and to split the expression string into an array of numbers and operators. One difficulty I had was how to recognise negative numbers. I solved this using a lookbehind assertion to check whether the character preceding a negative symbol was a number or operator.
 
 A key focus was to implement this without using the problematic eval() function, and to manually evaluate the expression using BEDMAS.
 
