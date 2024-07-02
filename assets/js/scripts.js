@@ -9,12 +9,9 @@ const equalsKey = document.getElementById("equals");
 let screen = document.getElementById("calc-screen");
 let decimal = false;
 const operators = ["+", "x", "/"];
+const acceptedKeys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "x", "/", "-", "."];
 
-// add event listeners to calculator keys
-keys.forEach(key => key.addEventListener('click', () => {
-    addValues(key.value);
-}));
-
+// add each key value to the screen
 function addValues(key) {
     const lastChar = screen.innerText[screen.innerText.length - 1];
 
@@ -45,8 +42,12 @@ function addValues(key) {
     }
 }
 
-// calculator delete key functionality
-deleteKey.addEventListener("click", () => {
+// add event listeners to calculator keys
+keys.forEach(key => key.addEventListener('click', () => {
+    addValues(key.value);
+}));
+
+function deleteValue() {
     const lastChar = screen.innerText[screen.innerText.length - 1];
 
     if (screen.innerText.length === 1) {
@@ -59,34 +60,28 @@ deleteKey.addEventListener("click", () => {
             decimal = false;
         }
     }
+}
+
+// calculator: delete key functionality
+deleteKey.addEventListener("click", () => {
+    deleteValue();
 })
 
-// calculator reset key functionality
-resetKey.addEventListener("click", () => {
+// calculator: reset key functionality
+function resetValues() {
     screen.innerText = "0";
     decimal = false;
-})
-  
-// calculator evaluate the equation
-equalsKey.addEventListener("click", () => {
-    screen.innerText = evaluateExpression(screen.innerText);
+}
+
+resetKey.addEventListener("click", () => {
+    resetValues();
 })
 
+// calculator: evaluate the equation function
 function evaluateExpression(expression) {
-    
-    // replace x with * in the expression
-    expression = expression.replace(/x/g, '*')
-
     // split the expression into numbers and operators
-    const tokens = expression.match(/(\d+\.?\d*|\+|\-|\*|\/)/g);
-    
+    const tokens = expression.match(/(\d+\.\d+|\d+|(?<=\D|^)-\d+|\+|\-|\x|\/)/g);
     if (!tokens) return "ERROR";
-
-    // check for negative numbers
-    if (tokens[0] === "-") {
-        tokens[1] = "-" + tokens[1];
-        tokens.splice(0, 1);
-    }
 
     // helper function to perform a single operation
     function operate(a, operator, b) {
@@ -95,7 +90,7 @@ function evaluateExpression(expression) {
         switch (operator) {
             case '+': return a + b;
             case '-': return a - b;
-            case '*': return a * b;
+            case 'x': return a * b;
             case '/': return b !== 0 ? a / b : "ZERO DIVISION ERROR";
             default: return "ERROR";
         }
@@ -104,7 +99,7 @@ function evaluateExpression(expression) {
     // perform multiplication and division first
     // start at index 1 because operators are at odd index, numbers are at even index
     for (let i = 1; i < tokens.length - 1; i += 2) {
-        if (tokens[i] === '*' || tokens[i] === '/') {
+        if (tokens[i] === 'x' || tokens[i] === '/') {
             const result = operate(tokens[i-1], tokens[i], tokens[i+1]);
             if (typeof result === 'string') return result;
             // replace the 3 items with the result, and reset index to account for removal
@@ -117,15 +112,31 @@ function evaluateExpression(expression) {
     let result = parseFloat(tokens[0]);
     for (let i = 1; i < tokens.length; i += 2) {
         const nextResult = operate(result, tokens[i], tokens[i+1]);
-        if (typeof nextResult === 'string') return nextResult; // Error occurred
+        if (typeof nextResult === 'string') return nextResult; // error occurred
         result = nextResult;
     }
-    
-    // make sure the result has a maximumm of 6 decimal places
-    result = parseFloat(parseFloat(result).toFixed(6));
-    decimal = expression.includes(".") ? true : false;
+
+    if (isNaN(parseFloat(result))) return "ERROR"; // check the result is a number
+    result = parseFloat(parseFloat(result).toFixed(6)); // round to maximum 6 decimal places
+    decimal = expression.includes(".") ? true : false; // reset decimal boolean
 
     return result;
+}
+
+// calculator: add event listener to equals key
+equalsKey.addEventListener("click", () => {
+    screen.innerText = evaluateExpression(screen.innerText);
+})
+
+// calculator: add event listener for keyboard support
+document.onkeydown = function(event) {
+    console.log(event.key);
+    if (event.key === "=" || event.key === "Enter") screen.innerText = evaluateExpression(screen.innerText);
+    if (event.key === "Delete") resetValues();
+    if (event.key === "Backspace") deleteValue();
+    if (event.shiftKey && event.key === "+") addValues("+");
+    if (event.shiftKey && event.key === "*") addValues("x");
+    if (acceptedKeys.includes(event.key)) addValues(event.key);
 }
 
 // theme switcher functionality
