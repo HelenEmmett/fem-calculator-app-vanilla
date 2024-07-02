@@ -47,16 +47,13 @@ A key focus was to implement this without using the problematic eval() function,
 In the future I would like to rebuild this with React. I would also like to write test cases, as all my testing was done manually.
 
 
-### Useful resources
+### Useful resources and acknowledgments
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [The Odin Project](https://www.theodinproject.com/lessons/foundations-calculator) - This helped me think through some of the potential issues when building a calculator.
+- [typeofnan](https://typeofnan.dev/how-to-add-thousandths-place-comma-every-three-digits-in-javascript/) - This article helped me to consider using regular expressions. Although this solution didn't work for this project, it gave me the seed of thought! I also used W3Schools and MDN Web Docs for further understanding.
+- [Javascript Calculator with Keyboard Input](https://codepen.io/thecountgs/pen/JReGNR) - This was a good reference project. It uses var so I would assume it is quite old, but it gave me a start of where to look to implement keyboard support for the project. This was also where I got the idea of having a boolean variable to manage the state of using a decimal point.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+- Website - [Helen Emmett](https://helenemmett.co.nz/)
+- Frontend Mentor - [@HelenEmmett](https://www.frontendmentor.io/profile/HelenEmmett)
