@@ -52,6 +52,8 @@ In the future I would like to rebuild this with React. I would also like to writ
 - [The Odin Project](https://www.theodinproject.com/lessons/foundations-calculator)  - This helped me think through some of the potential issues when building a calculator.
 - [typeofnan](https://typeofnan.dev/how-to-add-thousandths-place-comma-every-three-digits-in-javascript/)  - This article helped me to consider using regular expressions. Although this solution didn't work for this project, it gave me the seed of thought! I also used W3Schools and MDN Web Docs for further understanding.
 - [Javascript Calculator with Keyboard Input](https://codepen.io/thecountgs/pen/JReGNR)  - This was a good reference project. It uses var so I would assume it is quite old, but it gave me a start of where to look to implement keyboard support for the project. This was also where I got the idea of having a boolean variable to manage the state of using a decimal point.
+- [CSS fix for 100vh in mobile WebKit](https://css-tricks.com/css-fix-for-100vh-in-mobile-webkit/) - This was a good resource for fixing the mobile view, where the body area was larger than the screen size on an iPhone.
+- [MDN touch-action](https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action#manipulation) - On a mobile device, the page was zooming when double tapping. This page helped me to resolve the issue.
 
 ## Author
 

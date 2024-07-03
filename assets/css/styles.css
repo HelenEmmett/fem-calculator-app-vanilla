@@ -86,6 +86,10 @@ body.theme3 {
     box-sizing: border-box;
 }
 
+html {
+    height: -webkit-fill-available;
+}
+
 body {
     font-family: "League Spartan", sans-serif;
     font-optical-sizing: auto;
@@ -94,7 +98,8 @@ body {
     font-size: calc(32rem / 16);
     padding: 0;
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: -webkit-fill-available; /* mobile viewport bug fix */
     background: var(--main-bg);
     color: var(--primary-text);
     display: flex;
@@ -211,6 +216,10 @@ h1 {
     column-gap: 25px;
     text-align: center;
     border-radius: 10px;
+}
+
+#calc-keypad button {
+    touch-action: manipulation;
 }
 
 .keys, .del, .reset, .equals {
